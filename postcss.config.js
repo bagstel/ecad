@@ -19,7 +19,7 @@ module.exports = {
     require("cssnano"),
     require("postcss-pxtorem")({
       rootValue: 10,
-      propList: ["*", "!*border*"],
+      propList: ["*", "!*border*", "PX"],
       selectorBlackList: [/^html$/]
     })
   ]

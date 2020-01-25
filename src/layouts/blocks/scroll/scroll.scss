@@ -1,0 +1,16 @@
+.scroll {
+  display: flex;
+  //bottom: 4.17%;
+  //left: 50%;
+  //transform: translateX(-50%);
+  //z-index: 9999;
+
+  &__link {
+    width: 16px;
+    height: 16px;
+    border-right: 2px solid $alternative-color;
+    border-bottom: 2px solid $alternative-color;
+    transform: rotate(45deg);
+    z-index: 9999;
+  }
+}

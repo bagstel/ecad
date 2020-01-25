@@ -1,0 +1,26 @@
+- var text = 'The vast majority of asteroids are small, compared with a large one like Ida, this 32-mile-long chunk of stone and iron that was photographed in 1993 by the Galileo spacecraft. ';
+-
+  var
+    products = [
+      { title: 'Meta Editor', text: 'The vast majority of asteroids are small, compared with a large one like Ida, this 32-mile-long chunk of stone and iron that was photographed in 1993 by the Galileo spacecraft. ' },
+      { title: 'Facebook App', text: 'We live on the surface of our planet Earth. Gravity keeps us here on the Earth. Gravity is an invisible force that pulls things and people toward the center of the Earth. All the other planets, stars and moons have gravity too. ' },
+    ]
+section.apps#apps
+  .container
+    .fullscreen-section
+      h2.title Apps
+      ul.apps__list
+        each product in products
+          li.apps__item
+            .product-card
+              header.product-card__header
+                .subtitle #{product.title}
+              .product-card__content
+                p #{product.text}
+              .product-card__footer
+                .controls
+                  ul.controls__list
+                    li.controls__item
+                      a(class="buttons" href="#" target="_blank") Install
+                    li.controls__item
+                      a(class="buttons" href="#") F.A.Q

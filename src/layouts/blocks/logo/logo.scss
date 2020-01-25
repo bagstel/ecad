@@ -1,0 +1,22 @@
+.logo {
+  font-family: 'SF Pro Display', sans-serif;
+  position: relative;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 3.6rem;
+  text-transform: uppercase;
+
+  &__link {
+    text-decoration: none;
+    display: flex;
+    align-items: flex-end;
+
+    &:before {
+      content: '';
+      width: .6rem;
+      height: .6rem;
+      background-color: $alternative-color;
+      margin-bottom: .75rem;
+    }
+  }
+}

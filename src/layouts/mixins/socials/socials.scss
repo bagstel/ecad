@@ -1,0 +1,50 @@
+.socials {
+  display: none;
+  @include tablets {
+    display: block;
+  }
+  position: fixed;
+  right: 5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+
+  &__list {
+  }
+
+  &__item {
+    margin-bottom: 5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+  }
+
+  &__icon {
+    width: 1.6rem;
+    height: auto;
+    fill: currentColor;
+  }
+}
+
+.socials.socials--popup {
+  display: block;
+  @include tablets {
+    display: none;
+  }
+  position: relative;
+  right: 0;
+  top: 0;
+  transform: translateY(0);
+  z-index: 9999;
+
+  .socials__icon {
+    width: 2.4rem;
+    height: auto;
+    fill: currentColor;
+  }
+}

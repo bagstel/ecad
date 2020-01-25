@@ -1,0 +1,10 @@
+- var icons = [{ name: 'M', link: '//medium.com' }, { name: 'fb', link: '//www.facebook.com' }, { name: 'tw', link: '//twitter.com' }];
+
+mixin socials(mod)
+  - var modificator = mod ? `socials socials--${mod}` : 'socials';
+  div(class=`${modificator}`)
+    ul.socials__list
+      each icon in icons
+        li.socials__item
+          a(class="socials__link" href=icon.link target="_blank")
+            +icon(icon.name, 'socials__icon')

@@ -1,0 +1,197 @@
+// vars
+$animation: .6s; // animation speed
+$animation-delay: 0;
+$width: 22px;
+
+.burger {
+  height: 18px;
+  width: $width;
+  //background: #f00;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &-bun-top,
+  &-bun-bot,
+  &-filling {
+    //position: absolute;
+    //right: 0;
+    display: block;
+    height: 3px;
+    //border-radius: 2px;
+    background: currentColor;
+  }
+
+  &-bun-top {
+    width: $width;
+    transform-origin: 20px 5px;
+  }
+
+  &-bun-bot {
+    bottom: 0;
+    right: 0;
+    width: $width - 12px;
+    //transform: rotate(45deg);
+    transform-origin: 20px -3px;
+  }
+
+  &-filling {
+    top: 6px;
+    width: $width - 6px;
+    right: 0;
+  }
+
+  &.is-open > &-bun-top {
+    animation: bun-top-out $animation linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: $animation-delay;
+  }
+
+  &.is-open > &-bun-bot {
+    animation: bun-bot-out $animation linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: $animation-delay;
+  }
+
+  &.is-open &-filling {
+    animation: burger-fill-out $animation linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: $animation-delay;
+  }
+
+  &.is-closed > &-bun-top {
+    animation: bun-top-in $animation linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: $animation-delay;
+  }
+
+  &.is-closed > &-bun-bot {
+    animation: bun-bot-in $animation linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: $animation-delay;
+  }
+
+  &.is-closed > &-filling {
+    animation: burger-fill-in $animation linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: $animation-delay;
+  }
+}
+
+.popup-open {
+  .burger {
+    color: $page-bg-color;
+    z-index: 9999;
+  }
+}
+
+@keyframes bun-top-out {
+  0% {
+    right: 0;
+    top: 0;
+    transform: rotate(0deg);
+  }
+  //20% {
+  //  left: 0;
+  //  top: 0;
+  //  transform: rotate(15deg);
+  //}
+  //80% {
+  //  left: -5px;
+  //  top: 0;
+  //  transform: rotate(-60deg);
+  //}
+  100% {
+    //left: -3px;
+    //top: 4px;
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes bun-bot-out {
+  0% {
+    //right: 0;
+    width: $width - 12px;
+    transform: rotate(0deg);
+  }
+  //20% {
+  //  right: 0;
+  //  transform: rotate(-15deg);
+  //}
+  //80% {
+  //  right: -6px;
+  //  transform: rotate(60deg);
+  //}
+  100% {
+    //right: -6px;
+    width: $width;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes bun-top-in {
+  0% {
+    //left: -5px;
+    transform: rotate(-45deg);
+  }
+  //20% {
+  //  //left: -5px;
+  //  transform: rotate(-60deg);
+  //}
+  //80% {
+  //  left: 0;
+  //  transform: rotate(15deg);
+  //}
+  100% {
+    //left: 0;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bun-bot-in {
+  0% {
+    //right: 5px;
+    width: $width;
+    transform: rotate(45deg);
+  }
+  //20% {
+  //  right: 5px;
+  //  bottom: 0;
+  //  transform: rotate(60deg);
+  //}
+  //80% {
+  //  right: 0;
+  //  bottom: 0;
+  //  transform: rotate(-15deg);
+  //}
+  100% {
+    right: 0;
+    width: $width - 12px;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes burger-fill-in {
+  0%,
+  40% {
+    width: 0;
+  }
+  80%,
+  100% {
+    width: $width - 6px;
+  }
+}
+
+@keyframes burger-fill-out {
+  0% {
+    width: $width - 6px;
+  }
+  20% {
+    width: $width - 12px;
+  }
+  40%,
+  100% {
+    width: 0;
+  }
+}

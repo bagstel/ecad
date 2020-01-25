@@ -1,0 +1,11 @@
+mixin menu(mod)
+  - var modificator = mod ? `menu menu--${mod}` : 'menu';
+
+  nav(class=`${modificator}`)
+    ul.menu__list
+      li.menu__item
+        a(class="menu__link" href="#apps") About
+      li.menu__item
+        a(class="menu__link" href="#about") Apps
+      li.menu__item
+        a(class="menu__link" href="#contacts") Contacts

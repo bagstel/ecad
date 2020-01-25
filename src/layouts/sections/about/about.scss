@@ -1,0 +1,20 @@
+.about {
+  & .fullscreen-section {
+    padding: 12rem 0 10rem;
+  }
+
+  &__wrap {
+    margin-top: 3rem;
+  }
+
+  &__header {
+  }
+
+  &__content {
+    color: rgba(currentColor, .8);
+  }
+
+  &__footer {
+    margin-top: 2rem;
+  }
+}

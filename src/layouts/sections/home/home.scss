@@ -1,0 +1,19 @@
+/*
+Home styles
+******************************************************************************************/
+.home {
+  position: relative;
+
+  &__seo-title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 4.17%;
+    transform: translate(-50%, 0);
+  }
+}

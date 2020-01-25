@@ -1,0 +1,8 @@
+- var statistics = [{ title: '10 000+', subtitle: 'downloads' }, { title: '4.8/5', subtitle: 'our rating on Shopify' }, { title: '3 000', subtitle: 'active users' }]
+
+.statistics
+  ul.statistics__list
+    each item in statistics
+      li.statistics__item
+        .statistics__title #{item.title}
+        .statistics__subtitle #{item.subtitle}

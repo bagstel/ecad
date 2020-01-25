@@ -23,7 +23,7 @@ git commit -m 'deploy'
 # git push -f https://github.com/<USERNAME>/<REPO>.git master
 
 ## if you are deploying to https://<USERNAME>.github.io/<REPO>
-# git push -f https://<USERNAME>.github.io/<REPO> master:gh-pages
+git push -f https://github.com/bagstel/ecad.git master:gh-pages
 
 cd -
 

@@ -1,0 +1,23 @@
+- var text = 'The Moon is our nearest neighbor in space. The Moon is smaller than the Earth. It moves around the Earth in a path, called an orbit. Astronauts have visited the Moon. A spaceship takes a half days to go from the Earth to the Moon.';
+
+section.contacts#contacts
+  .container
+    .fullscreen-section
+      h2.title Contacts
+      article.contacts__wrap
+        .contacts__content
+          p #{text}
+
+      .contacts__form
+        form.feedback#feedback
+          .contacts__row
+            .contacts__input
+              input(type="text" placeholder="Enter your name")
+          .contacts__row
+            .contacts__input
+              input(type="email" placeholder="Write your e-mail")
+          .contacts__row
+            .contacts__textarea
+              textarea(placeholder="Your message")
+          .contacts__row
+            button(class="buttons" type="submit") Send
