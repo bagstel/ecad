@@ -8,8 +8,17 @@
   height: 100vh;
   min-width: 300px;
   right: -100%;
-  z-index: 1000;
+  z-index: 2;
   transition: right .5s;
+
+  &__burger {
+    position: fixed;
+    top: 3.7rem;
+    right: 2rem;
+    @include tablets {
+      display: none;
+    }
+  }
 
   &__wrap {
     display: flex;

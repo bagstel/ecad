@@ -4,8 +4,4 @@ section.about#about
   .container
     .fullscreen-section
       h2.title About
-      article.about__wrap
-        .about__content
-          p #{text}
-        footer.about__footer
-          include ../../blocks/statistic/statistic
+      +card('about', text)

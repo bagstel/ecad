@@ -1,50 +1,50 @@
-const path = require("path");
-const webpack = require("webpack");
-const glob = require("glob");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
-const VueLoaderPlugin = require("vue-loader/lib/plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const PurgecssPlugin = require("purgecss-webpack-plugin");
+const path = require('path');
+const webpack = require('webpack');
+const glob = require('glob');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 
 module.exports = (env, argv) => {
-  const isProductionBuild = argv.mode === "production";
+  const isProductionBuild = argv.mode === 'production';
   const PATHS = {
-    public: "/ecad/",
-    views: path.join(__dirname, "src/views")
+    public: '/ecad/',
+    views: path.join(__dirname, 'src/views')
   };
   const styles = {
     test: /\.(p|post|s)css$/,
     use: [
-      isProductionBuild ? MiniCssExtractPlugin.loader : "vue-style-loader",
-      "css-loader",
-      "sass-loader",
-      "postcss-loader"
+      isProductionBuild ? MiniCssExtractPlugin.loader : 'vue-style-loader',
+      'css-loader',
+      'sass-loader',
+      'postcss-loader'
     ]
   };
 
   const vue = {
     test: /\.vue$/,
-    loader: "vue-loader"
+    loader: 'vue-loader'
   };
 
   const js = {
     test: /\.js$/,
-    loader: "babel-loader",
+    loader: 'babel-loader',
     exclude: /node_modules/,
     options: {
-      presets: ["@babel/preset-env"],
-      plugins: ["@babel/plugin-syntax-dynamic-import"]
+      presets: ['@babel/preset-env'],
+      plugins: ['@babel/plugin-syntax-dynamic-import']
     }
   };
 
   const files = {
     test: /\.(png|jpe?g|gif|woff2?)$/i,
-    loader: "file-loader",
+    loader: 'file-loader',
     options: {
-      name: "[hash].[ext]",
+      name: '[hash].[ext]',
       esModule: false
     }
   };
@@ -53,21 +53,21 @@ module.exports = (env, argv) => {
     test: /\.svg$/,
     use: [
       {
-        loader: "svg-sprite-loader",
+        loader: 'svg-sprite-loader',
         options: {
           extract: true,
-          spriteFilename: svgPath => `sprite${svgPath.substr(-4)}`
+          spriteFilename: svgPath => `sprite${ svgPath.substr(-4) }`
         }
       },
-      "svg-transform-loader",
+      'svg-transform-loader',
       {
-        loader: "svgo-loader",
+        loader: 'svgo-loader',
         options: {
           plugins: [
             { removeTitle: true },
             {
               removeAttrs: {
-                attrs: "(fill|stroke)"
+                attrs: '(fill|stroke)'
               }
             }
           ]
@@ -81,33 +81,33 @@ module.exports = (env, argv) => {
     oneOf: [
       {
         resourceQuery: /^\?vue/,
-        use: ["pug-plain-loader"]
+        use: ['pug-plain-loader']
       },
       {
-        use: ["pug-loader"]
+        use: ['pug-loader']
       }
     ]
   };
 
   const config = {
     entry: {
-      main: "./src/main.js"
+      main: './src/main.js'
     },
     output: {
-      path: path.resolve(__dirname, "./dist"),
-      filename: "[name].[hash].build.js",
-      publicPath: isProductionBuild ? PATHS.public : "",
-      chunkFilename: "[chunkhash].js"
+      path: path.resolve(__dirname, './dist'),
+      filename: '[name].[hash].build.js',
+      publicPath: isProductionBuild ? PATHS.public : '',
+      chunkFilename: '[chunkhash].js'
     },
     module: {
       rules: [styles, vue, js, files, svg, pug]
     },
     resolve: {
       alias: {
-        vue$: "vue/dist/vue.esm.js",
-        images: path.resolve(__dirname, "src/images")
+        vue$: 'vue/dist/vue.esm.js',
+        images: path.resolve(__dirname, 'src/images')
       },
-      extensions: ["*", ".js", ".vue", ".json"]
+      extensions: ['*', '.js', '.vue', '.json']
     },
     devServer: {
       historyApiFallback: true,
@@ -119,26 +119,31 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "src/views/index.pug",
-        chunks: ["main"]
+        template: 'src/views/main.pug',
+        filename: 'index.html',
+        chunks: ['main']
       }),
-      new SpriteLoaderPlugin({ plainSprite: true }),
-      new VueLoaderPlugin()
+      new HtmlWebpackPlugin({
+        template: 'src/views/faq.pug',
+        filename: 'faq.html',
+        chunks: ['main']
+      }),
+      new SpriteLoaderPlugin({ plainSprite: true })
     ],
-    devtool: "#eval-source-map"
+    devtool: '#eval-source-map'
   };
 
   if (isProductionBuild) {
-    config.devtool = "none";
+    config.devtool = 'none';
     config.plugins = (config.plugins || []).concat([
       new webpack.DefinePlugin({
-        "process.env": {
+        'process.env': {
           NODE_ENV: '"production"'
         }
       }),
       new MiniCssExtractPlugin({
-        filename: "[name].[contenthash].css",
-        chunkFilename: "[contenthash].css"
+        filename: '[name].[contenthash].css',
+        chunkFilename: '[contenthash].css'
       })
     ]);
 

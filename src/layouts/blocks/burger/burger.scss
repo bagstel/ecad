@@ -4,9 +4,11 @@ $animation-delay: 0;
 $width: 22px;
 
 .burger {
+  margin: 0;
+  padding: 0;
   height: 18px;
   width: $width;
-  //background: #f00;
+  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,12 +17,9 @@ $width: 22px;
   &-bun-top,
   &-bun-bot,
   &-filling {
-    //position: absolute;
-    //right: 0;
     display: block;
     height: 3px;
-    //border-radius: 2px;
-    background: currentColor;
+    background-color: currentColor;
   }
 
   &-bun-top {

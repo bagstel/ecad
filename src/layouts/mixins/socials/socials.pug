@@ -1,4 +1,4 @@
-- var icons = [{ name: 'M', link: '//medium.com' }, { name: 'fb', link: '//www.facebook.com' }, { name: 'tw', link: '//twitter.com' }];
+- var icons = [{ name: 'medium', link: '//medium.com' }, { name: 'facebook', link: '//www.facebook.com' }, { name: 'twitter', link: '//twitter.com' }];
 
 mixin socials(mod)
   - var modificator = mod ? `socials socials--${mod}` : 'socials';
@@ -7,4 +7,4 @@ mixin socials(mod)
       each icon in icons
         li.socials__item
           a(class="socials__link" href=icon.link target="_blank")
-            +icon(icon.name, 'socials__icon')
+            +icon(icon.name, `socials__icon socials__icon--${icon.name}`)

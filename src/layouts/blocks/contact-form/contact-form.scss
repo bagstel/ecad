@@ -1,0 +1,38 @@
+.contacts-form {
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  &__input:not(:last-child),
+  &__textarea:not(:last-child),
+  &__buttons:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input,
+  &__textarea {
+    background: #171717;
+
+    input,
+    textarea {
+      margin: 0;
+      width: 100%;
+      border: 1px solid transparent;
+      color: currentColor;
+      line-height: 170%;
+      background-color: transparent;
+      padding: 2.9rem 1.8rem;
+      resize: none;
+    }
+
+    textarea {
+      height: 22rem;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border: 1px solid $alternative-color;
+    }
+  }
+}

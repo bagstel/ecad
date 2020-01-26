@@ -1,0 +1,48 @@
+.card {
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  &__header,
+  &__title,
+  &__content,
+  &__footer {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 100%;
+    color: $alternative-color;
+  }
+
+  &__content {
+    color: rgba(currentColor, .8);
+  }
+
+  &__contnet p {
+    padding: 0;
+    margin: 0 0 2rem 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__image {
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 62.5%;
+      background-color: lightgray;
+    }
+  }
+}

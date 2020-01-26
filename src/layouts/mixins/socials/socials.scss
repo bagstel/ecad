@@ -46,5 +46,17 @@
     width: 2.4rem;
     height: auto;
     fill: currentColor;
+
+    &--medium {
+      height: 2.4rem;
+    }
+
+    &--facebook {
+      height: 2.4rem;
+    }
+
+    &--twitter {
+      height: 2rem;
+    }
   }
 }

@@ -11,9 +11,13 @@ Home styles
   }
 
   &__scroll {
+    display: none;
     position: absolute;
     left: 50%;
     bottom: 4.17%;
     transform: translate(-50%, 0);
+    @include phones {
+      display: block;
+    }
   }
 }

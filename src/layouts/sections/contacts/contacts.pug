@@ -4,20 +4,5 @@ section.contacts#contacts
   .container
     .fullscreen-section
       h2.title Contacts
-      article.contacts__wrap
-        .contacts__content
-          p #{text}
-
-      .contacts__form
-        form.feedback#feedback
-          .contacts__row
-            .contacts__input
-              input(type="text" placeholder="Enter your name")
-          .contacts__row
-            .contacts__input
-              input(type="email" placeholder="Write your e-mail")
-          .contacts__row
-            .contacts__textarea
-              textarea(placeholder="Your message")
-          .contacts__row
-            button(class="buttons" type="submit") Send
+      +card('contacts', text)
+      include ../../blocks/contact-form/contact-form

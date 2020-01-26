@@ -2,49 +2,4 @@
   & .fullscreen-section {
     padding: 12rem 0 10rem;
   }
-
-  &__content {
-    color: rgba(currentColor, .8);
-  }
-
-  &__wrap {
-    margin-top: 3rem;
-  }
-
-  &__form {
-    margin-top: 3rem;
-  }
-
-  &__row {
-    margin-bottom: 2rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  &__input,
-  &__textarea {
-    background: #171717;
-
-    input,
-    textarea {
-      margin: 0;
-      width: 100%;
-      border: none;
-      color: currentColor;
-      line-height: 170%;
-      background-color: transparent;
-      padding: 2.9rem 1.8rem;
-      resize: none;
-    }
-
-    textarea {
-      height: 22rem;
-    }
-  }
-
-  &__button {
-    margin-top: 2rem;
-  }
 }

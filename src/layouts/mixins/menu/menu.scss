@@ -31,7 +31,8 @@
       transition: transform .3s;
     }
 
-    &:hover::after {
+    &:hover::after,
+    &--active {
       transform: translateX(-50%) scaleX(1);
     }
   }

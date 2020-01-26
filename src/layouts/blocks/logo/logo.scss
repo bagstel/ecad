@@ -11,12 +11,17 @@
     display: flex;
     align-items: flex-end;
 
-    &:before {
-      content: '';
-      width: .6rem;
-      height: .6rem;
-      background-color: $alternative-color;
-      margin-bottom: .75rem;
-    }
+    //&:before {
+    //  content: '';
+    //  width: .6rem;
+    //  height: .6rem;
+    //  background-color: $alternative-color;
+    //  margin-bottom: .75rem;
+    //}
+  }
+  &__icon {
+    //width: 208px;
+    //height: auto;
+    //fill: $page-text-color;
   }
 }

@@ -1,9 +1,9 @@
 .header {
   position: fixed;
   width: 100%;
-  padding-top: 28px;
-  //padding-top: 64px;
-  z-index: 8000;
+  padding: 2.8rem 0;
+  z-index: 1;
+  background-color: $page-bg-color;
 
   & > .container {
     display: flex;
@@ -12,16 +12,6 @@
   }
 
   &__menu {
-    //display: flex;
-  }
-
-  &__burger {
-    z-index: 9100;
-    @include tablets {
-      display: none;
-    }
-  }
-  &__nav {
     display: none;
     @include tablets {
       display: block;
