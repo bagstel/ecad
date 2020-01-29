@@ -110,16 +110,18 @@ img {
 }
 
 .seo-title {
-  font-size: 3.4rem;
+  //font-size: 3.4rem;
+  font-size: 9.06666vw;
+  @media only screen and (min-width: 365px) {
+    font-size: calc(1.85rem + 4.13334vw);
+  }
+  @media only screen and (min-width: 1440px) {
+    font-size: 7.8rem;
+  }
   font-weight: 800;
   line-height: 124%;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
-
-  span {
-    display: flex;
-    flex-wrap: wrap;
-  }
 }
 
 .title {
