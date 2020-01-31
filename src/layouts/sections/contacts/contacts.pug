@@ -2,6 +2,10 @@
 
 section.section
   .container
-    h2.title Contacts
-    +card('contacts', contactsText)
-    include ../../blocks/contact-form/contact-form
+    .contacts
+      .contacts__wrapper
+        .contacts__content
+          h2.title Contacts
+          +card('contacts', contactsText)
+        .contacts__form
+          include ../../blocks/contact-form/contact-form
