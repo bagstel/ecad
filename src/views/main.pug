@@ -4,7 +4,13 @@ block vars
   - var title = 'Home page';
 
 block content
-  include ../layouts/sections/home/home
-  include ../layouts/sections/about/about
-  include ../layouts/sections/apps/apps
-  include ../layouts/sections/contacts/contacts
+  #fullpage
+    include ../layouts/sections/home/home
+    include ../layouts/sections/about/about
+    include ../layouts/sections/apps/apps
+    include ../layouts/sections/contacts/contacts
+
+block scripts
+  script(src="//code.jquery.com/jquery-3.3.1.min.js")
+  script(src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/vendors/scrolloverflow.js")
+  script(src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js")

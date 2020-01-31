@@ -29,6 +29,8 @@ mixin card (mod, data)
         | Gravity is an invisible force that pulls things and people toward the center of the Earth.
         | All the other planets, stars and moons have gravity too. Without gravity we would float away into space.
       .card__image
+        .adaptive-images
+          img(src=require("../layouts/sections/about/rectangle.jpg") alt="")
       h3.card__title Asteroids
       .card__content
         p The vast majority of asteroids are small, compared with a large one like Ida,
