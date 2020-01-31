@@ -6,3 +6,23 @@
 @import "./layouts/mixins/**/*.scss";
 @import "./layouts/blocks/**/*.scss";
 @import "./layouts/sections/**/*.scss";
+
+.section {
+  .fp-tableCell {
+    //padding-top: 10rem;
+    //padding: 12rem 0 0;
+    //display: block;
+    //vertical-align: unset;
+  }
+  //padding: 12rem 0 2rem;
+}
+
+.home,
+.about,
+.apps {
+  &__container {
+    //padding: 12rem 2rem 2rem;
+    //margin: 10rem 0 0;
+
+  }
+}

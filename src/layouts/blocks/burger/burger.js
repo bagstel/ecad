@@ -1,16 +1,23 @@
 $('document').ready(function () {
-  let body = $('body'),
-      trigger = $('.burger'),
-      isClosed = false;
+  let body = $('body');
+  let trigger = $('.burger');
+  let isClosed = false;
 
-  // console.log(trigger);
   trigger.click(() => burgerTime());
+
+  function eventHandler ({ target }) {
+    if ( target.closest('#fullpage')
+      || target.closest('.header')
+      || target.closest('.socials__link')
+      || target.closest('.menu__link')) { closeIt(); }
+  }
 
   function closeIt () {
     trigger.removeClass('is-open');
     body.removeClass('popup-open');
     trigger.addClass('is-closed');
     isClosed = false;
+    $('.wrapper').off('click', eventHandler)
   }
 
   function openIt () {
@@ -19,8 +26,7 @@ $('document').ready(function () {
     trigger.addClass('is-open');
     isClosed = true;
 
-    $('.root-container').one('click', closeIt);
-    $('.socials__link').one('click', closeIt);
+    $('.wrapper').on('click', eventHandler)
   }
 
   function burgerTime () {

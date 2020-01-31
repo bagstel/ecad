@@ -32,7 +32,7 @@
     }
 
     &:hover::after,
-    &--active {
+    &--active::after {
       transform: translateX(-50%) scaleX(1);
     }
   }

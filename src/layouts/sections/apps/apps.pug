@@ -1,4 +1,3 @@
-- var text = 'The vast majority of asteroids are small, compared with a large one like Ida, this 32-mile-long chunk of stone and iron that was photographed in 1993 by the Galileo spacecraft. ';
 -
   var
           products = [
@@ -12,11 +11,10 @@
             }
           ];
 
-section.apps#apps
+section.section
   .container
-    .fullscreen-section
-      h2.title Apps
-      ul.apps__list
-        each product in products
-          li.apps__item
-            +card('apps', product)
+    h2.title Apps
+    ul.apps__list
+      each product in products
+        li.apps__item
+          +card('apps', product)

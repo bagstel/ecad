@@ -1,8 +1,7 @@
-- var text = 'The Moon is our nearest neighbor in space. The Moon is smaller than the Earth. It moves around the Earth in a path, called an orbit. Astronauts have visited the Moon. A spaceship takes a half days to go from the Earth to the Moon.';
+- var contactsText = 'The Moon is our nearest neighbor in space. The Moon is smaller than the Earth. It moves around the Earth in a path, called an orbit. Astronauts have visited the Moon. A spaceship takes a half days to go from the Earth to the Moon.';
 
-section.contacts#contacts
+section.section
   .container
-    .fullscreen-section
-      h2.title Contacts
-      +card('contacts', text)
-      include ../../blocks/contact-form/contact-form
+    h2.title Contacts
+    +card('contacts', contactsText)
+    include ../../blocks/contact-form/contact-form

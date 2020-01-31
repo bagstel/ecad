@@ -1,27 +1,17 @@
-/*
-Home styles
-******************************************************************************************/
 .home {
-  position: relative;
-
   &__seo-title {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-
-    .seo-title {
-      width: 9.651em;
+    //font-size: 3.4rem;
+    font-size: 9.06666vw;
+    @media only screen and (min-width: 365px) {
+      font-size: calc(1.85rem + 4.13334vw);
     }
-  }
-
-  &__scroll {
-    display: none;
-    position: absolute;
-    left: 50%;
-    bottom: 4.17%;
-    transform: translate(-50%, 0);
-    @include phones {
-      display: block;
+    @media only screen and (min-width: 1440px) {
+      font-size: 7.8rem;
     }
+    font-weight: 800;
+    line-height: 124%;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    width: 9.651em;
   }
 }

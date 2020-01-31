@@ -1,9 +1,17 @@
 .scroll {
-  display: flex;
+  //display: flex;
   //bottom: 4.17%;
   //left: 50%;
   //transform: translateX(-50%);
   //z-index: 9999;
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 4.17%;
+  transform: translate(-50%, 0);
+  @include phones {
+    display: flex;
+  }
 
   &__link {
     width: 16px;
