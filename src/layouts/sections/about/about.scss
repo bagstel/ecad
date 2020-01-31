@@ -1,3 +1,36 @@
 .about {
+  &__wrapper {
+    display: flex;
+    //align-items: center;
+  }
 
+  &__content {
+    flex: 1 1 50%;
+    align-self: center;
+
+    &:not(:last-child) {
+      margin-right: 6rem;
+    }
+  }
+
+  &__aside {
+    flex: 1 1 50%;
+    display: none;
+    @media only screen and (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 650px;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 62.5%;
+      background-color: lightgray;
+    }
+  }
 }

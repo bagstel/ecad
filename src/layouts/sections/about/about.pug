@@ -2,5 +2,11 @@
 
 section.section
   .container
-    h2.title About
-    +card('about', aboutText)
+    .about
+      .about__wrapper
+        .about__content
+          h2.title About
+          +card('about', aboutText)
+        aside.about__aside
+          .about__image
+
