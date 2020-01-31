@@ -1,5 +1,20 @@
 .contacts {
-  & .fullscreen-section {
-    padding: 12rem 0 10rem;
+  &__wrapper {
+    @media only screen and (min-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &__content {
+    flex: 1 1 46%;
+    margin-bottom: 3rem;
+
+    &:not(:last-child) {
+      margin-right: 6rem;
+    }
+  }
+
+  &__form {
+    flex: 1 1 54%;
   }
 }
