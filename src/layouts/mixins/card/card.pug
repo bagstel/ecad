@@ -6,8 +6,9 @@ mixin card (mod, data)
         include ../../blocks/statistic/statistic
   if mod === 'apps'
     .card
-      .card__title #{data.title}
-      .card__content: p #{data.text}
+      .card__wrapper
+        .card__title #{data.title}
+        .card__content.card--sf-pro-display: p #{data.text}
       .card__footer
         .controls
           ul.controls__list
