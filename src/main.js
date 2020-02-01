@@ -1,5 +1,3 @@
-import './main.scss';
-
 if (process.env.NODE_ENV === 'development') {
   require('file-loader!./views/faq.pug');
   require('file-loader!./views/main.pug');
@@ -32,4 +30,9 @@ $(document).ready(function () {
   });
 
   $.fn.fullpage.setAllowScrolling(true);
+
+  $('.contacts-form').on('click', '.buttons', function (e) {
+    e.preventDefault();
+    console.log(e.target.innerText = 'Thank you!');
+  })
 });

@@ -12,7 +12,7 @@ const PurgecssPlugin = require('purgecss-webpack-plugin');
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === 'production';
   const PATHS = {
-    public: '/ecad/',
+    public: '/',
     views: path.join(__dirname, 'src/views')
   };
   const styles = {
@@ -91,7 +91,8 @@ module.exports = (env, argv) => {
 
   const config = {
     entry: {
-      main: './src/main.js'
+      main: ['./src/main.scss', './src/main.js'],
+      faq: ['./src/main.scss', './src/faq.js'],
     },
     output: {
       path: path.resolve(__dirname, './dist'),
@@ -126,7 +127,7 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template: 'src/views/faq.pug',
         filename: 'faq.html',
-        chunks: ['main']
+        chunks: ['faq']
       }),
       new SpriteLoaderPlugin({ plainSprite: true })
     ],

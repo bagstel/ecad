@@ -1,4 +1,5 @@
 .buttons {
+  position: relative;
   background-color: transparent;
   display: inline-block;
   color: currentColor;
@@ -7,8 +8,64 @@
   text-decoration: none;
   padding: 3rem 2rem;
   border: 1px solid transparent;
+  transition: transform .3s;
+  animation: anim-out 4s forwards cubic-bezier(0.19, 1, 0.22, 1);
 
   &:hover {
-    border-color: $alternative-color;
+    animation: anim-in 4s forwards cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &:focus {
+    outline: 1px solid rgba(253, 5, 109, .5);
+  }
+}
+
+.buttons__scroll-top {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid #fff;
+    border-left: 3px solid #fff;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes anim-in {
+  from {
+    outline: 1px solid rgba(253, 5, 109, .5);
+    box-shadow: inset 0 0 20px rgba(253, 5, 109, 0);
+    outline-offset: 0;
+    text-shadow: none;
+  }
+  to {
+    border: 1px solid #FD056D;
+    outline-color: rgba(253, 5, 109, 0);
+    outline-offset: 15px;
+    box-shadow: inset 0 0 20px rgba(253, 5, 109, .5), 0 0 20px rgba(253, 5, 109, .2);
+    text-shadow: 1px 1px 2px #FD056D;
+  }
+}
+
+@keyframes anim-out {
+  from {
+    outline-color: rgba(253, 5, 109, 0);
+    outline-offset: 15px;
+    border: 1px solid #FD056D;
+    box-shadow: inset 0 0 20px rgba(253, 5, 109, .5), 0 0 20px rgba(253, 5, 109, .2);
+    text-shadow: 1px 1px 2px #FD056D;
+  }
+  to {
+
   }
 }

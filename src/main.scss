@@ -7,22 +7,78 @@
 @import "./layouts/blocks/**/*.scss";
 @import "./layouts/sections/**/*.scss";
 
-.section {
-  .fp-tableCell {
-    //padding-top: 10rem;
-    //padding: 12rem 0 0;
-    //display: block;
-    //vertical-align: unset;
-  }
-  //padding: 12rem 0 2rem;
+.main-light {
+  color: #FBFBFB;
 }
 
-.home,
-.about,
-.apps {
-  &__container {
-    //padding: 12rem 2rem 2rem;
-    //margin: 10rem 0 0;
+.faq {
+  position: relative;
+
+  &__scroll {
+    position: fixed;
+    bottom: 5%;
+    right: 1.9rem;
+    z-index: 100;
+  }
+
+  &__warapper {
+    display: flex;
+  }
+
+  &__aside {
+    width: 100%;
+    max-width: 285px;
+    display: none;
+    @media only screen and (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+  }
+
+  &__controls:not(:last-child),
+  &__title:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  &__list {
 
   }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    font-size: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    max-width: 10em;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -0.2rem;
+      transform: translateX(-50%) scaleX(0);
+      transform-origin: 50% 50%;
+      width: 100%;
+      height: .2rem;
+      background-color: $alternative-color;
+      transition: transform .3s;
+    }
+
+    &:hover::after,
+    &--active::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+  }
 }
+
+

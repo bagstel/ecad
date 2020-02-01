@@ -19,20 +19,5 @@ mixin card (mod, data)
   if mod === 'contacts'
     .card
       .card__content: p #{data}
-  if mod === 'description'
-    .card
-      .card__content
-        p We, humans, live on the Earth. And our planet Earth is surrounded by space.
-        | The sky is what we see of space. There are billions of stars and probably billions
-        | of other planets moving through space. Our planet is moving through space too.
-        p We live on the surface of our planet Earth. Gravity keeps us here on the Earth.
-        | Gravity is an invisible force that pulls things and people toward the center of the Earth.
-        | All the other planets, stars and moons have gravity too. Without gravity we would float away into space.
-      .card__image
-        .adaptive-images
-          img(src=require("../layouts/sections/about/rectangle.jpg") alt="")
-      h3.card__title Asteroids
-      .card__content
-        p The vast majority of asteroids are small, compared with a large one like Ida,
-        | this 32-mile-long chunk of stone and iron that was photographed in 1993 by the Galileo spacecraft.
+
 

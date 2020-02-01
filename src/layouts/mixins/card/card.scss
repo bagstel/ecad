@@ -30,11 +30,15 @@
 
   &__content {
     color: rgba(currentColor, .8);
+
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
   }
 
-  &__contnet p {
+  &__content p {
     padding: 0;
-    margin: 0 0 2rem 0;
+    margin: 0 0 3rem 0;
 
     &:last-child {
       margin: 0;
