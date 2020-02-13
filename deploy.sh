@@ -13,7 +13,7 @@ npm run build
 cd dist
 
 ## if you are deploying to a custom domain
-# echo 'example.com' > CNAME
+echo 'ecad.psd-to.site' > CNAME
 
 git init
 git add -A

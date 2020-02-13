@@ -1,17 +1,23 @@
-extends ../layouts/template
+include ../layouts/mixins/mixins
 
-block vars
-  - var title = 'Home page';
-
-block content
-  #fullpage
-    include ../layouts/sections/home/home
-    include ../layouts/sections/about/about
-    include ../layouts/sections/apps/apps
-    include ../layouts/sections/contacts/contacts
-
-block styles
-  link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css")
-block scripts
-  script(src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/vendors/scrolloverflow.js")
-  script(src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js")
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css")
+    title Nordwind | Home page
+  body
+    .wrapper
+      include ../layouts/blocks/popup/popup
+      include ../layouts/blocks/header/header
+      +socials
+      #fullpage
+        include ../layouts/sections/home/home
+        include ../layouts/sections/about/about
+        include ../layouts/sections/apps/apps
+        include ../layouts/sections/contacts/contacts
+    script(src="//code.jquery.com/jquery-3.3.1.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/vendors/scrolloverflow.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js")

@@ -9,6 +9,7 @@ import './scripts/anim';
 import './layouts/blocks/burger/burger';
 
 $(document).ready(function () {
+  const header = document.querySelector('.header');
   let menus = [...document.querySelectorAll('.menu .menu__list')];
   menus = menus.map(menu => [...menu.children]);
 
@@ -17,6 +18,14 @@ $(document).ready(function () {
     anchors: ['home', 'about', 'apps', 'contacts'],
     scrollOverflow: true,
     onLeave: function (origin, destination, direction) {
+      if (origin === 1) {
+        header.style.backgroundColor = '#0d0d0d';
+      }
+
+      if (destination === 1) {
+        header.style.backgroundColor = 'transparent';
+      }
+      console.log(origin);
       menus.forEach(menu => {
         menu.forEach((item, index) => {
           const link = item.firstElementChild;
@@ -36,3 +45,7 @@ $(document).ready(function () {
     console.log(e.target.innerText = 'Thank you!');
   })
 });
+
+import 'particles.js';
+
+particlesJS('particles-js', require('./particles'));

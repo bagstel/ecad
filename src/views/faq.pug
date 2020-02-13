@@ -1,48 +1,85 @@
-extends ../layouts/template
+include ../layouts/mixins/mixins
 
-block vars
-  - var title = 'Product description';
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    block styles
+    title Nordwind | Product description
+  body
+    .wrapper
+      <!-- POPUP MENU -->
+      .popup
+        .popup__wrap
+          .popup__burger
+            include ../layouts/blocks/burger/burger
+          nav(class='menu menu--popup')
+            ul.menu__list
+              li.menu__item
+                a(class="menu__link" href="/#about") About
+              li.menu__item
+                a(class="menu__link" href="/#apps") Apps
+              li.menu__item
+                a(class="menu__link" href="/#contacts") Contacts
+          +socials('popup')
+      <!-- HEADER -->
+      header.header(style="background-color: #0d0d0d")
+        .container
+          .header__logo
+            .logo(role="logo")
+              a(class="logo__link" href="/")
+                svg(width="208" height="43" viewBox="0 0 208 43" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  path(d="M15.053 34V19.1113H15.1936L26.0042 34H31.1018V8.63477H24.9846V23.3828H24.844L14.0862 8.63477H8.93579V34H15.053ZM46.7815 8.19531C39.0999 8.19531 34.2483 13.2402 34.2483 21.3262C34.2483 29.4121 39.0823 34.4395 46.7815 34.4395C54.4631 34.4395 59.2971 29.4121 59.2971 21.3262C59.2971 13.2402 54.4631 8.19531 46.7815 8.19531ZM46.7815 13.4336C50.385 13.4336 52.7405 16.4922 52.7405 21.3262C52.7405 26.1426 50.385 29.2012 46.7815 29.2012C43.1604 29.2012 40.8225 26.1426 40.8225 21.3262C40.8225 16.4922 43.178 13.4336 46.7815 13.4336ZM68.8948 13.5039H72.6565C74.9592 13.5039 76.4534 14.9629 76.4534 17.125C76.4534 19.3223 75.0471 20.7109 72.6741 20.7109H68.8948V13.5039ZM68.8948 25.123H72.1819L76.5413 34H83.7834L78.7034 24.1738C81.4807 22.9609 83.0452 20.1133 83.0452 17.002C83.0452 11.7637 79.635 8.63477 73.3069 8.63477H62.4436V34H68.8948V25.123ZM86.2795 8.63477V34H96.5803C104.227 34 108.744 29.2715 108.744 21.168C108.744 13.082 104.244 8.63477 96.5803 8.63477H86.2795ZM92.7307 13.8379H95.7366C99.8147 13.8379 102.188 16.4219 102.188 21.1855C102.188 26.248 99.9377 28.7969 95.7366 28.7969H92.7307V13.8379ZM126.78 18.1621H126.92L131.192 34H137.274L143.901 8.63477H137.239L133.811 25.7734H133.67L129.434 8.63477H124.266L120.03 25.7734H119.889L116.461 8.63477H109.799L116.426 34H122.508L126.78 18.1621ZM152.989 34V8.63477H146.537V34H152.989ZM162.955 34V19.1113H163.096L173.906 34H179.004V8.63477H172.887V23.3828H172.746L161.989 8.63477H156.838V34H162.955ZM182.854 8.63477V34H193.155C200.801 34 205.319 29.2715 205.319 21.168C205.319 13.082 200.819 8.63477 193.155 8.63477H182.854ZM189.305 13.8379H192.311C196.389 13.8379 198.762 16.4219 198.762 21.1855C198.762 26.248 196.512 28.7969 192.311 28.7969H189.305V13.8379Z" fill="#FBFBFB")
+                  rect(y="27.9371" width="6.01975" height="6.0629" fill="#FD056D")
 
-block content
-  .faq
-    .faq__scroll
-      a(class="buttons buttons__scroll-top" href="#")
-    .container
-      h2.title Meta Editor
-      .faq__warapper
-        aside.faq__aside
-          .faq__controls
-            a(class="buttons" href="#" target="_blank") Install
-          .faq__title
-            .subtitle How to:
-          .faq__menu
-            ul.faq__list
-              li.faq__item
-                a(class="faq__link" href="#") Сhange meta data for all products
-              li.faq__item
-                a(class="faq__link" href="#") Сhange meta data for some products
-              li.faq__item
-                a(class="faq__link" href="#") Edit ALT text
-        .faq__content
-          .card
-            .card__content.main-light
-              p We, humans, live on the Earth. And our planet Earth is surrounded by space. The sky is what we see of space. There are billions of stars and probably billions of other planets moving through space. Our planet is moving through space too.
-              p We live on the surface of our planet Earth. Gravity keeps us here on the Earth. Gravity is an invisible force that pulls things and people toward the center of the Earth. All the other planets, stars and moons have gravity too. Without gravity we would float away into space.
-
-            h3.card__title Asteroids
-
-            .card__content.main-light
-              p The vast majority of asteroids are small, compared with a large one like Ida, this 32-mile-long chunk of stone and iron that was photographed in 1993 by the Galileo spacecraft.
-
-            .card__image
-              .adaptive-images
-                img(src=require("../layouts/sections/about/rectangle.jpg") alt="")
-
-            .card__content.main-light
-              p We, humans, live on the Earth. And our planet Earth is surrounded by space. The sky is what we see of space. There are billions of stars and probably billions of other planets moving through space. Our planet is moving through space too.
-              p We live on the surface of our planet Earth. Gravity keeps us here on the Earth. Gravity is an invisible force that pulls things and people toward the center of the Earth. All the other planets, stars and moons have gravity too. Without gravity we would float away into space.
-
-            h3.card__title Asteroids
-
-            .card__content.main-light
-              p The vast majority of asteroids are small, compared with a large one like Ida, this 32-mile-long chunk of stone and iron that was photographed in 1993 by the Galileo spacecraft.
+          .header__menu
+            nav(class='menu menu--header')
+              ul.menu__list
+                li.menu__item
+                  a(class="menu__link" href="/#about") About
+                li.menu__item
+                  a(class="menu__link" href="/#apps") Apps
+                li.menu__item
+                  a(class="menu__link" href="/#contacts") Contacts
+      <!-- SOCIALS -->
+      +socials
+      <!-- MAIN CONTENT -->
+      .faq
+        .container
+          h2.title Meta Editor
+          .faq__warapper
+            aside.faq__aside
+              .faq__controls
+                a(class="buttons" href="#" target="_blank") Install
+              .faq__title
+                .subtitle How to:
+              .faq__menu
+                ul.faq__list
+                  li.faq__item
+                    a(class="faq__link" href="#") Сhange meta data for all products
+                  li.faq__item
+                    a(class="faq__link" href="#") Сhange meta data for some products
+                  li.faq__item
+                    a(class="faq__link" href="#") Edit ALT text
+            .faq__content
+              .card
+                .card__content.main-light
+                  p We, humans, live on the Earth. And our planet Earth is surrounded by space. The sky is what we see of space. There are billions of stars and probably billions of other planets moving through space. Our planet is moving through space too.
+                  p We live on the surface of our planet Earth. Gravity keeps us here on the Earth. Gravity is an invisible force that pulls things and people toward the center of the Earth. All the other planets, stars and moons have gravity too. Without gravity we would float away into space.
+                h3.card__title Asteroids
+                .card__content.main-light
+                  p The vast majority of asteroids are small, compared with a large one like Ida, this 32-mile-long chunk of stone and iron that was photographed in 1993 by the Galileo spacecraft.
+                .card__image
+                  .adaptive-images
+                    img(src=require("../layouts/sections/about/rectangle.jpg") alt="")
+                .card__content.main-light
+                  p We, humans, live on the Earth. And our planet Earth is surrounded by space. The sky is what we see of space. There are billions of stars and probably billions of other planets moving through space. Our planet is moving through space too.
+                  p We live on the surface of our planet Earth. Gravity keeps us here on the Earth. Gravity is an invisible force that pulls things and people toward the center of the Earth. All the other planets, stars and moons have gravity too. Without gravity we would float away into space.
+                h3.card__title Asteroids
+                .card__content.main-light
+                  p The vast majority of asteroids are small, compared with a large one like Ida, this 32-mile-long chunk of stone and iron that was photographed in 1993 by the Galileo spacecraft.
+        .faq__scroll
+          a(class="buttons buttons__scroll-top" href="#")
+    script(src="//code.jquery.com/jquery-3.3.1.min.js")
